@@ -18,7 +18,7 @@ void setup ()
     buttons = new MSButton [NUM_ROWS][NUM_COLS];
     for(int r = 0; r < buttons.length; r++){
         for(int c = 0; c < buttons[r].length; c++){
-            MSButton bob = new MSButton[r][c];
+            MSButton bob = new MSButton(r, c);
         }
     }
     
@@ -52,14 +52,14 @@ public void displayWinningMessage()
 public class MSButton
 {
     private int r, c;
-    //private float x,y, width, height;
-    //private boolean clicked, marked;
+    private float x,y, width, height;
+    private boolean clicked, marked;
     private String label;
     
     public MSButton ( int rr, int cc )
     {
-        // width = 400/NUM_COLS;
-        // height = 400/NUM_ROWS;
+        width = 400/NUM_COLS;
+        height = 400/NUM_ROWS;
         r = rr;
         c = cc; 
         x = c*width;
