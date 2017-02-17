@@ -17,21 +17,23 @@ void setup ()
     buttons = new MSButton [NUM_ROWS][NUM_COLS];
     for(int r = 0; r < buttons.length; r++){
         for(int c = 0; c < buttons[r].length; c++){
-            MSButton bob = new MSButton(r, c);
+            buttons[r][c] = new MSButton(r, c);
         }
     }
+    while(bombs.size()<20){
+       setBombs();
+    }
     
-    setBombs();
 }
 public void setBombs()
 {
-    for(int row = 0; row < buttons.length; row++){
-        for(int col = 0; col < buttons[row].length; col++){
-            if(!bombs.contains(buttons[row][col])){
-                bombs.add(buttons[row][col]);
-            }
-        }
+    int row = (int)(Math.random()*NUM_ROWS);
+    int col = (int)(Math.random()*NUM_COLS);
+    if(!bombs.contains(buttons[row][col])){
+        bombs.add(buttons[row][col]);
     }
+        System.out.println(row);
+        System.out.println(col);
     //your code
 }
 
