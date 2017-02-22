@@ -32,8 +32,8 @@ public void setBombs()
     if(!bombs.contains(buttons[row][col])){
         bombs.add(buttons[row][col]);
     }
-        System.out.println(row);
-        System.out.println(col);
+        //System.out.println(row);
+        //System.out.println(col);
     //your code
 }
 
@@ -89,7 +89,20 @@ public class MSButton
     public void mousePressed () 
     {
         clicked = true;
-        //your code here
+        if(keyPressed == true){
+            if(marked == false){
+                clicked = false;    
+            }
+            else if(bombs.contains(this)){
+                displayLosingMessage();   
+            }
+            else if(countBombs(r, c) > 0){
+                label = "" + countBombs(r, c);
+            }
+            else{
+                mousePressed();
+            }
+        }//your code here
     }
 
     public void draw () 
@@ -111,15 +124,41 @@ public class MSButton
     {
         label = newLabel;
     }
-    public boolean isValid(int r, int c)
+    public boolean isValid(int row, int col)
     {
-        //your code here
+        if(row >= 0 && col >= 0 && row <= 20 && col <= 20)
+            return true;
         return false;
     }
     public int countBombs(int row, int col)
     {
         int numBombs = 0;
-        //your code here
+        if(buttons[row][col].isValid(row, col) == true){
+            if(buttons[row - 1][col].marked == true ){
+                numBombs++;
+            }
+            if(buttons[row - 1][col - 1].marked == true){
+                numBombs++;
+            }
+            if(buttons[row][col - 1].marked == true){
+                numBombs++;
+            }
+            if(buttons[row + 1][col - 1].marked == true){
+                numBombs++;
+            }
+            if(buttons[row + 1][col].marked == true){
+                numBombs++;
+            }
+            if(buttons[row + 1][col + 1].marked == true){
+                numBombs++;
+            }
+            if(buttons[row][col + 1].marked == true){
+                numBombs++;
+            }
+            if(buttons[row - 1][col - 1].marked == true){
+                numBombs++;
+            }
+        }
         return numBombs;
     }
 }
