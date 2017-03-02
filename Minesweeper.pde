@@ -35,20 +35,34 @@ public void draw(){
     displayWinningMessage();
 }
 
-public boolean isWon(){
+public boolean isWon(){  
+  for(int a = 0; a < buttons.length; a++){
+    for(int b = 0; b < buttons[a].length; b++){
+      if(!bombs.contains(buttons[a][b]) && buttons[a][b].isMarked() == true && bombs.contains(buttons[a][b]) && buttons[a][b].isClicked() == true){
+        return true;
+      }
+    }
+  }
   return false;
-  /*if(buttons[a][b].isMarked() == true || buttons[a][b].isClicked() == true)
-    return true;
-    buttons[a][b].isWon();*/
 }
 
 public void displayLosingMessage(){
-  //your code here
+    if(isWon() == true){
+        buttons[10][10].setLabel("O");
+    }
 }
 
 public void displayWinningMessage(){
-  //your code here
+    if(isWon() == false){
+        buttons[10][10].setLabel("C");
+    }  
 }
+
+/*
+  public void setLabel(String newLabel){
+    label = newLabel;
+  }
+*/
 
 public class MSButton{
   private int r, c;
@@ -127,6 +141,7 @@ public class MSButton{
   public void setLabel(String newLabel){
     label = newLabel;
   }
+
   public boolean isValid(int row, int col){
     if (row >= 0 && col >= 0 && row < NUM_ROWS && col < NUM_COLS) {
       return true;
