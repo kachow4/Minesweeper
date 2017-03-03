@@ -47,15 +47,31 @@ public boolean isWon(){
 }
 
 public void displayLosingMessage(){
-    if(isWon() == true){
-        buttons[10][10].setLabel("O");
-    }
+  buttons[2][9].setLabel("O");
+  buttons[2][9].setLabel("o");
+  buttons[2][9].setLabel("p");
+  buttons[2][9].setLabel("s");
+  buttons[2][9].setLabel("!");
+  buttons[2][9].setLabel("t");
+  buttons[2][9].setLabel("r");
+  buttons[2][9].setLabel("y");
+  buttons[2][9].setLabel("A");
+  buttons[2][9].setLabel("g");
+  buttons[2][9].setLabel("i");
+  buttons[2][9].setLabel("a");
+  buttons[2][9].setLabel("n");
+  buttons[2][9].setLabel("!");
+
+    
+
+        
 }
+//oops! try again!
 
 public void displayWinningMessage(){
-    if(isWon() == false){
+    
         buttons[10][10].setLabel("C");
-    }  
+    
 }
 
 /*
@@ -90,11 +106,13 @@ public class MSButton{
     return clicked;
   }
 
-
   public void mousePressed (){
     clicked = true;
     if (keyPressed == true) {
-      marked = !marked;
+        marked = !marked;
+        if(marked == false){
+           clicked = false;
+        }
     } 
     else if (bombs.contains(this)) {
       displayLosingMessage();
