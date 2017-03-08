@@ -47,38 +47,41 @@ public boolean isWon(){
 }
 
 public void displayLosingMessage(){
-  buttons[2][9].setLabel("O");
-  buttons[2][9].setLabel("o");
-  buttons[2][9].setLabel("p");
-  buttons[2][9].setLabel("s");
-  buttons[2][9].setLabel("!");
-  buttons[2][9].setLabel("t");
-  buttons[2][9].setLabel("r");
-  buttons[2][9].setLabel("y");
-  buttons[2][9].setLabel("A");
-  buttons[2][9].setLabel("g");
-  buttons[2][9].setLabel("i");
-  buttons[2][9].setLabel("a");
-  buttons[2][9].setLabel("n");
-  buttons[2][9].setLabel("!");
-
-    
-
-        
+  buttons[9][2].setLabel("O");
+  buttons[9][3].setLabel("o");
+  buttons[9][4].setLabel("p");
+  buttons[9][5].setLabel("s");
+  buttons[9][6].setLabel("!");
+  buttons[9][8].setLabel("T");
+  buttons[9][9].setLabel("r");
+  buttons[9][10].setLabel("y");
+  buttons[9][12].setLabel("A");
+  buttons[9][13].setLabel("g");
+  buttons[9][14].setLabel("a");
+  buttons[9][15].setLabel("i");
+  buttons[9][16].setLabel("n");
+  buttons[9][17].setLabel("!");      
 }
-//oops! try again!
 
 public void displayWinningMessage(){
-    
-        buttons[10][10].setLabel("C");
-    
-}
+  buttons[9][2].setLabel("C");
+  buttons[9][3].setLabel("o");
+  buttons[9][4].setLabel("n");
+  buttons[9][5].setLabel("g");
+  buttons[9][6].setLabel("r");
+  buttons[9][8].setLabel("a");
+  buttons[9][9].setLabel("t");
+  buttons[9][10].setLabel("s");
+  buttons[9][11].setLabel("!");
+  buttons[9][13].setLabel("Y");
+  buttons[9][14].setLabel("o");
+  buttons[9][15].setLabel("u");
+  buttons[9][17].setLabel("W");
+  buttons[9][18].setLabel("i");
+  buttons[9][19].setLabel("n");
+  buttons[9][20].setLabel("!");
 
-/*
-  public void setLabel(String newLabel){
-    label = newLabel;
-  }
-*/
+}
 
 public class MSButton{
   private int r, c;
